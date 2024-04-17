@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>International Telephone Input</title>
+    <link rel="stylesheet" href="build/css/intlTelInput.css" />
+    <link rel="stylesheet" href="build/css/demo.css" />
+    <script>
+    
+          function test()
+          {
+
+            var phone=document.getElementById("phone");
+            var iti = window.intlTelInputGlobals.getInstance(phone);
+            console.log("123",iti.getSelectedCountryData().dialCode);
+            console.log(phone)
+               
+          }
+    </script>
+  </head>
+
+  <body>
+    <h1>International Telephone Input</h1>
+    <form>
+      <input id="phone" name="phone" type="tel" value="" />
+      <button class="button" id="jsSubmit" type="button" onclick="test()" >Submit</button>
+    </form>
+
+    <script src="build/js/intlTelInput.js"></script>
+    <script>
+      const input = document.querySelector("#phone");
+
+    window.intlTelInput(input, {
+      initialCountry: "us",
+      showSelectedDialCode: true,
+      utilsScript: "/intl-tel-input/js/utils.js?1713303972139" // just for formatting/placeholders etc
+    });
+    </script>
+  </body>
+</html>
